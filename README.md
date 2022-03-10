@@ -20,7 +20,7 @@
 ### Caveats
 
 1. This will not work on mobile devices
-2. When hosted, the backend could be deployed at a geographical region that is not close to you, resulting in minor input lag. This can be potentially solved with geo load balancing or GSLB
-3. An unstable network such as a weak WiFi connection will prevent the game from being smooth
-4. There is currently no logic to prevent a different player on a different browser to interfere with the controls of your player
-5. If you choose to contribute or modify the code, there are currently no tests to ensure that it conforms to spec
+2. When hosted, the backend could be deployed at a geographical region that is not close to you, resulting in minor input lag. This can be potentially solved with a multi region deployment via GSLB or Anycast IP.
+3. An unstable network such as a weak WiFi connection will prevent the game from being smooth.
+4. There is currently no logic to prevent a different player on a different browser to interfere with the controls of your player.
+5. If you choose to contribute or modify the code, there are currently no tests to ensure that it conforms to spec.

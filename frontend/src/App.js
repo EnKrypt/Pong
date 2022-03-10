@@ -28,7 +28,11 @@ const App = () => {
   registerKeyboardEvents(socket, playing);
 
   useEffect(() => {
-    socket = new WebSocket(`ws://${window.location.hostname}:8080`);
+    socket = new WebSocket(
+      `ws://${process.env.REACT_APP_BACKEND_HOST || 'localhost'}:${
+        process.env.REACT_APP_BACKEND_PORT || 8080
+      }`
+    );
 
     socket.addEventListener('message', (event) => {
       setLoading(false);

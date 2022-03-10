@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
@@ -45,8 +46,12 @@ var ballCollisionBounds = [2][2]int{
 var paddleMovementBounds = [2]int{(paddleHeight + 1) / 2, arenaHeight - ((paddleHeight + 1) / 2)}
 
 func main() {
+	port, ok := os.LookupEnv("PORT")
+	if !ok {
+		port = "8080"
+	}
 	http.HandleFunc("/", pongServer)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", port), nil))
 }
 
 func pongServer(w http.ResponseWriter, r *http.Request) {

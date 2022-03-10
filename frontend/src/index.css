@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #404060;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Share Tech Mono';
+}
+
+.app {
+  width: 800px;
+}
+
+.loading {
+  position: absolute;
+  font-size: 5em;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  top: 255px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  padding: 1em 1.5em;
+  font-size: 1.2em;
+}
+
+.divider {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  top: 0;
+}
+
+.divider-right {
+  right: 0;
+  border-left: solid 1px #505050;
+}
+
+.divider-left {
+  left: 0;
+  border-right: solid 1px #505050;
+}
+
+.score {
+  position: absolute;
+  top: 273px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3.5em;
+  font-size: 3em;
+  color: #006099;
+}
+
+.score .green {
+  color: #009900;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(30, 100, 100, 0.75);
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  text-align: center;
+  color: #ffffff;
+}
+
+.pong {
+  background-color: #000;
+  height: 600px;
+  position: relative;
+}
+
+.paddle {
+  position: absolute;
+  width: 21px;
+  height: 121px;
+  background-color: #ffffff;
+}
+
+.player1 {
+  left: 0;
+}
+
+.player2 {
+  right: 0;
+}
+
+.ball {
+  position: absolute;
+  background-color: #ffffff;
+  width: 21px;
+  height: 21px;
+}

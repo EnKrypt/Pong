@@ -28,10 +28,10 @@ const App = () => {
   registerKeyboardEvents(socket, playing);
 
   useEffect(() => {
+    const host = process.env.REACT_APP_BACKEND_HOST || 'localhost';
+    const port = process.env.REACT_APP_BACKEND_PORT || 8080;
     socket = new WebSocket(
-      `ws://${process.env.REACT_APP_BACKEND_HOST || 'localhost'}:${
-        process.env.REACT_APP_BACKEND_PORT || 8080
-      }`
+      `${host === 'localhost' ? 'ws' : 'wss'}://${host}:${port}`
     );
 
     socket.addEventListener('message', (event) => {

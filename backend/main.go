@@ -50,6 +50,7 @@ func main() {
 	if !ok {
 		port = "8080"
 	}
+	log.Println("Starting backend for pong-multiplayer")
 	http.HandleFunc("/", pongServer)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", port), nil))
 }
